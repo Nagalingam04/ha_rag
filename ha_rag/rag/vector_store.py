@@ -16,7 +16,7 @@ def build_store(embeddings, chunks):
     embeddings = np.array(embeddings).astype("float32")
 
     dim = embeddings.shape[1]
-    index = faiss.IndexFlatL2(dim)
+    index = faiss.IndexFlatIP(dim)
     index.add(embeddings)
 
     stored_chunks = chunks
